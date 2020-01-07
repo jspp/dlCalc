@@ -27,9 +27,13 @@ var wb = web.form( winform
 	,//可输入_DLCTL_ 前缀的常量以控制下载行为
 	);
 
-wb.go("http://192.168.1.111:8080/calculatorLoginv2.do?method=toCalculatorLogin")
+wb.go("http://zs.dailianpingtai.com/calculatorLoginv2.do?method=toCalculatorLogin")
+wb.ready( 
+	function( obj ){ 
+		wb.refresh();
+	}  
+)
 //打开目标网站
-
 winform.wndproc = function(hwnd,message,wparam,lparam){
 
         select(message) {//判断消息类型
